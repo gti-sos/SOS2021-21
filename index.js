@@ -1,6 +1,7 @@
 var cool = require('cool-ascii-faces')
 var express = require('express')
 var path = require("path");
+var cors = require("cors")
 
 var app = express()
 
@@ -23,6 +24,10 @@ temperature_api.register(app);
 
 //API REST Alejandro
 emision_api.register(app);
+
+//Habilitación de CORS para todas las rutas
+
+app.use(cors())
 
 app.listen(port, () => {
     console.log("Server ready listening on port " + port)
