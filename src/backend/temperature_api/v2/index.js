@@ -61,11 +61,53 @@ module.exports.register = (app) => {
                 "temperature_co2": 40
             },
             {
+                "country": "China",
+                "year": 2011,
+                "temperature_min": 38,
+                "temperature_max": 47,
+                "temperature_co2": 41
+            },
+            {
                 "country": "Spain",
                 "year": 2010,
                 "temperature_min": 37,
                 "temperature_max": 43,
                 "temperature_co2": 44
+            },
+            {
+                "country": "Spain",
+                "year": 2011,
+                "temperature_min": 34,
+                "temperature_max": 43,
+                "temperature_co2": 44
+            },
+            {
+                "country": "United States",
+                "year": 2010,
+                "temperature_min": 11,
+                "temperature_max": 25,
+                "temperature_co2": 40
+            },
+            {
+                "country": "United States",
+                "year": 2011,
+                "temperature_min": 13,
+                "temperature_max": 28,
+                "temperature_co2": 42
+            },
+            {
+                "country": "Colombia",
+                "year": 2010,
+                "temperature_min": 20,
+                "temperature_max": 30,
+                "temperature_co2": 20
+            },
+            {
+                "country": "Colombia",
+                "year": 2011,
+                "temperature_min": 22,
+                "temperature_max": 30,
+                "temperature_co2": 19
             }
         ];
         console.log('[INFO] Initial data loaded succesfully!');

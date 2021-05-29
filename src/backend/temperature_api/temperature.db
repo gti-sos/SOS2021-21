@@ -1,3 +1,14 @@
 {"country":"spain","year":2010,"temperature_min":37,"temperature_max":43,"temperature_co2":44,"_id":"6oiZawldIqy1Vali"}
 {"country":"spain","year":2010,"temperature_min":37,"temperature_max":43,"temperature_co2":44,"_id":"V4KsNgePaPijKRiX"}
 {"country":"china","year":2010,"temperature_min":37,"temperature_max":46.6,"temperature_co2":40,"_id":"g3HpO5ovztnhYERW"}
+{"$$deleted":true,"_id":"6oiZawldIqy1Vali"}
+{"$$deleted":true,"_id":"V4KsNgePaPijKRiX"}
+{"$$deleted":true,"_id":"g3HpO5ovztnhYERW"}
+{"country":"China","year":2010,"temperature_min":37,"temperature_max":46.6,"temperature_co2":40,"_id":"tJAjwhnwmh1qC4nW"}
+{"country":"China","year":2011,"temperature_min":38,"temperature_max":47,"temperature_co2":41,"_id":"dHAlu6aREKxfMOKw"}
+{"country":"Spain","year":2010,"temperature_min":37,"temperature_max":43,"temperature_co2":44,"_id":"IQiwQ0EqlwfmulFu"}
+{"country":"Spain","year":2011,"temperature_min":34,"temperature_max":43,"temperature_co2":44,"_id":"0NL2zNoXIfQgu1Ee"}
+{"country":"United States","year":2010,"temperature_min":11,"temperature_max":25,"temperature_co2":40,"_id":"3ij3xXYOZBmvi0Td"}
+{"country":"United States","year":2011,"temperature_min":13,"temperature_max":28,"temperature_co2":42,"_id":"as3xZAXYwYdSkDov"}
+{"country":"Colombia","year":2010,"temperature_min":20,"temperature_max":30,"temperature_co2":20,"_id":"apit8ZlBJMmM55pg"}
+{"country":"Colombia","year":2011,"temperature_min":22,"temperature_max":30,"temperature_co2":19,"_id":"5w10DymszadXA2Vf"}

@@ -8,9 +8,11 @@
     import EditFire from './frontend/fire_api/EditeFire.svelte';
 	import FireGraph from './frontend/fire_api/Graph.svelte';
 
+
 	import EditTemperature from './frontend/temperature_api/EditTemperature.svelte';
 	import TemperatureAPI from './frontend/temperature_api/TemperatureTable.svelte';
 	import TemperatureGraph from './frontend/temperature_api/Graph.svelte';
+	import TemperatureApexcharts from './frontend/temperature_api/GraphApexcharts.svelte';
 
 
 	import EmisionAPI from './frontend/emision_api/EmisionTable.svelte';
@@ -26,6 +28,7 @@
 		"/temperature-stats/:country/:year": EditTemperature,
 		"/temperature": TemperatureAPI,
 		"/temperature/graph": TemperatureGraph,
+		"/temperature/apex": TemperatureApexcharts,
 		"/emision": EmisionAPI,
 		"/emision-stats/:country/:year": EditEmision,
 		"/emision/graph": EmisionGraph,
