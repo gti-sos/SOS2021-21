@@ -190,6 +190,9 @@
             <NavItem>
                 <NavLink href="#/graph">Estadísticas globales</NavLink> 
             </NavItem>
+            <NavItem>
+                <NavLink href="#/fire/billboard">Estadísticas Billboard(D03)</NavLink> 
+            </NavItem>
         </Nav>
     </Navbar>
     <hr>

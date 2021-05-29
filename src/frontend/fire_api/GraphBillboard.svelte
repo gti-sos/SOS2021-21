@@ -13,10 +13,18 @@ async function loadGraph(){
     console.log("[ERR] Se ha producido un error cargando los datos.")
   }
 
-  fireData.forEach((f) =>{
-    graphData.push([f.country, f.fire_nfc, f.fire_nvs]);
-  });
+  let aux = []
+  let aux_1 = ["Número de incendios"]
+  let aux_2 = ["Número de especies afectas"]
 
+  fireData.forEach((f) =>{
+    aux.push(f.country+" - "+f.year)
+    aux_1.push(f.fire_nfc)
+    aux_2.push(f.fire_nvs)
+  });
+  graphData = [aux_1, aux_2]
+
+  console.log("[INFO] Datos recogidos de: "+aux)
   console.log("[INFO] Datos cargados para la gráfica: "+graphData)
 
   var chart = bb.generate({
