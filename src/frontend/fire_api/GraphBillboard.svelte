@@ -1,60 +1,57 @@
 <script>
+import bb, {area, areaSpline} from "billboard.js/dist/billboard.pkgd";
 
-import bb from "billboard.js/dist/billboard.pkgd";
-
-let data = []
-let graphData = []
+let graphData = [];
 
 async function loadGraph(){
+  const res = await fetch("/api/v2/fire-stats")
+  const fireData = await res.json()
+  if(res.ok){
+    console.log("[INFO] Se han cargado los datos correctamente los datos.")
+    console.log(fireData)
+  }else{
+    console.log("[ERR] Se ha producido un error cargando los datos.")
+  }
 
+  fireData.forEach((f) =>{
+    graphData.push([f.country, f.fire_nfc, f.fire_nvs]);
+  });
 
-    const fireData = await fetch("/api/v2/fire-stats")
-    data = await fireData.json()
+  console.log("[INFO] Datos cargados para la gráfica: "+graphData)
 
-    data.forEach((x) => {
-        graphData.push([x.country, x.fire_nfc])
-    })
+  var chart = bb.generate({
+    title: {
+      text: "Gráfica del número de incendios"
+    },
+    data: {
+      columns: [],
+      type:"bar"
+    },
+    bar: {
+      width: {
+        ratio: 0.5
+      }
+    },
+    bindto: "#areaChart"
+  });
 
-    console.log(graphData)
+  chart.load({
+    columns:graphData
+  })
 
-    return graphData
 }
 
+
+    
 loadGraph();
-
-var chart = bb.generate({
-  data: {
-    columns: [],
-    type: "bar", // for ESM specify as: line()
-  },
-  bindto: "#chart"
-});
-
-
-setTimeout(function() {
-	chart.load({
-		columns:graphData});
-}, 1500);
-
-
-setTimeout(function() {
-	chart.unload({
-		ids: "Cargando..."
-	});
-	chart.unload({
-		ids: "Cargando.."
-	});
-}, 2500);
-
 
 </script>
 
-
 <svelte:head>
+  <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/theme/insight.min.css">
 
 </svelte:head>
 
 <main>
-    <h2>Número de incendios España en los últimos años</h2>
-    <div id="chart"></div>
+  <div id="barChart"></div>
 </main>
