@@ -57,7 +57,6 @@ loadGraph();
 
 <svelte:head>
   <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/theme/insight.min.css">
-
 </svelte:head>
 
 <main>
