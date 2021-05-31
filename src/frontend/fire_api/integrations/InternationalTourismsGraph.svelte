@@ -1,5 +1,4 @@
 <script>
-    import { radar } from "billboard.js";
 
     import bb from 'billboard.js/dist/billboard.pkgd'
 
