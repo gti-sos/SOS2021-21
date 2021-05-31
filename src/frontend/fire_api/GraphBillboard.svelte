@@ -1,60 +1,64 @@
 <script>
+import bb, {area, areaSpline} from "billboard.js/dist/billboard.pkgd";
 
-import bb from "billboard.js/dist/billboard.pkgd";
-
-let data = []
-let graphData = []
+let graphData = [];
 
 async function loadGraph(){
+  const res = await fetch("/api/v2/fire-stats")
+  const fireData = await res.json()
+  if(res.ok){
+    console.log("[INFO] Se han cargado los datos correctamente los datos.")
+    console.log(fireData)
+  }else{
+    console.log("[ERR] Se ha producido un error cargando los datos.")
+  }
 
+  let aux = []
+  let aux_1 = ["Número de incendios"]
+  let aux_2 = ["Número de especies afectas"]
 
-    const fireData = await fetch("/api/v2/fire-stats")
-    data = await fireData.json()
+  fireData.forEach((f) =>{
+    aux.push(f.country+" - "+f.year)
+    aux_1.push(f.fire_nfc)
+    aux_2.push(f.fire_nvs)
+  });
+  graphData = [aux_1, aux_2]
 
-    data.forEach((x) => {
-        graphData.push([x.country, x.fire_nfc])
-    })
+  console.log("[INFO] Datos recogidos de: "+aux)
+  console.log("[INFO] Datos cargados para la gráfica: "+graphData)
 
-    console.log(graphData)
+  var chart = bb.generate({
+    title: {
+      text: "Gráfica del número de incendios"
+    },
+    data: {
+      columns: [],
+      type:"bar"
+    },
+    bar: {
+      width: {
+        ratio: 0.5
+      }
+    },
+    bindto: "#areaChart"
+  });
 
-    return graphData
+  chart.load({
+    columns:graphData
+  })
+
 }
 
+
+    
 loadGraph();
-
-var chart = bb.generate({
-  data: {
-    columns: [],
-    type: "bar", // for ESM specify as: line()
-  },
-  bindto: "#chart"
-});
-
-
-setTimeout(function() {
-	chart.load({
-		columns:graphData});
-}, 1500);
-
-
-setTimeout(function() {
-	chart.unload({
-		ids: "Cargando..."
-	});
-	chart.unload({
-		ids: "Cargando.."
-	});
-}, 2500);
-
 
 </script>
 
-
 <svelte:head>
-
+  <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/theme/insight.min.css">
 </svelte:head>
 
 <main>
-    <h2>Número de incendios España en los últimos años</h2>
-    <div id="chart"></div>
+  <div id="barChart"></div>
 </main>

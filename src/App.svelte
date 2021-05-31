@@ -21,6 +21,12 @@
 	import EmisionGraph from './frontend/emision_api/Graph.svelte';
 	import CommonGraph from './frontend/CommonGraph.svelte';
 
+	//Integraciones: Youssef Lakouifat
+	import AirPollutionGraph from './frontend/fire_api/integrations/AirPollutionGraph.svelte';
+	import InternationalTourismsGraph from './frontend/fire_api/integrations/InternationalTourismsGraph.svelte';
+	import LifeStatsGraph from './frontend/fire_api/integrations/LifeStatsGraph.svelte';
+	import SmokingGraph from './frontend/fire_api/integrations/SmokingGraph.svelte';
+
 	const routes = {
 		"/":Home,
 		"/fire": FireAPI,
@@ -36,6 +42,10 @@
 		"/emision/graph": EmisionGraph,
 		"/info": Info,
 		"/graph": CommonGraph,
+		"/integrations/airpollution":AirPollutionGraph,
+		"/integrations/internationaltourisms":InternationalTourismsGraph,
+		"/integrations/lifestats": LifeStatsGraph,
+		"/integrations/smoking":SmokingGraph,
 		"*":NotFound,
     };
 </script>
