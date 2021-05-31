@@ -38,10 +38,9 @@
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/theme/insight.min.css">
 </svelte:head>
 
 <main>
-    <h2>Gráfico de muertes por contaminación en el año 1990</h2>
+    <h2 style="text-align:center;">Gráfico de muertes por contaminación en el año 1990</h2>
     <div id="pieChart"></div>
 </main>

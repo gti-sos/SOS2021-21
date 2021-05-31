@@ -1,9 +1,10 @@
 var DataStore = require('nedb')
 var fire_stats = new DataStore({ filename: 'src/backend/fire_api/fire.db', autoload: true })
 var BASE_API_PATH = "/api/v2";
+var cors = require("cors");
 
 module.exports.register = (app) => {
-
+    app.use(cors())
     app.get(BASE_API_PATH + "/fire-stats", (req, res) => {
         dbquery = {}
         if(req.query.country){

@@ -1,9 +1,13 @@
 var DataStore = require('nedb')
 var temperature_stats = new DataStore({ filename: './src/backend/temperature_api/temperature.db', autoload: true })
 var BASE_API_PATH = "/api/v2";
+var cors = require("cors");
+
 
 
 module.exports.register = (app) => {
+
+    app.use(cors())
 
     app.get(BASE_API_PATH + "/temperature-stats", (req, res) => {
         dbquery = {}
