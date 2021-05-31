@@ -1,6 +1,6 @@
 <script>
 async function loadData(){
-    const API_URL = "https://sos2021-01-life-stats.herokuapp.com/api/v2/life-stats/"
+    const API_URL = "https://sos2021-21.herokuapp.com/api/v2/temperature-stats"
     let res = await fetch(API_URL)
     let lifeStatsData = await res.json()
     if(res.ok){
