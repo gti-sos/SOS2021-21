@@ -9,6 +9,8 @@
     CardText,
     CardTitle
   } from 'sveltestrap';
+  import { Col, Container, Row } from 'sveltestrap';
+
 </script>
 
 <main>
@@ -47,15 +49,15 @@
 					</a>
 				</li>
 			</CardText>
-
-			<Button color="light"><a href="#/fire">Frontend</a></Button>
-			<Button color="light"><a href="#/integrations/airpollution">Integracion (Contaminación)</a></Button>
-			<Button color="light"><a href="#/integrations/internationaltourisms">Integracion (Turimos Internacional)</a></Button>
-			<Button color="light"><a href="#/integrations/lifestats">Integracion (Calidad de vida)</a></Button>
-			<Button color="light"><a href="#/integrations/smoking">Integracion (Tabaco)</a></Button>
-
-
-
+			<Row cols={{ lg: 3, md: 2, sm: 1 }}>
+				<Button color="light"><a href="#/fire">Frontend</a></Button>
+				<Button color="light"><a href="#/fire/billboard">Billboard JS</a></Button>
+				<Button color="light"><a href="#/fire/graph">Highcharts</a></Button>
+				<Button color="light"><a href="#/integrations/airpollution">Integracion (Contaminación)</a></Button>
+				<Button color="light"><a href="#/integrations/internationaltourisms">Integracion (Turimos Internacional)</a></Button>
+				<Button color="light"><a href="#/integrations/lifestats">Integracion (Calidad de vida)</a></Button>
+				<Button color="light"><a href="#/integrations/smoking">Integracion (Tabaco)</a></Button>
+			</Row>
 		</CardBody>
 	</Card>
 
