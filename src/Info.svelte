@@ -49,6 +49,12 @@
 			</CardText>
 
 			<Button color="light"><a href="#/fire">Frontend</a></Button>
+			<Button color="light"><a href="#/integrations/airpollution">Integracion (Contaminación)</a></Button>
+			<Button color="light"><a href="#/integrations/internationaltourisms">Integracion (Turimos Internacional)</a></Button>
+			<Button color="light"><a href="#/integrations/lifestats">Integracion (Calidad de vida)</a></Button>
+			<Button color="light"><a href="#/integrations/smoking">Integracion (Tabaco)</a></Button>
+
+
 
 		</CardBody>
 	</Card>

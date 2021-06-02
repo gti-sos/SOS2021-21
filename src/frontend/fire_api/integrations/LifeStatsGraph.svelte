@@ -29,23 +29,23 @@
 
         
         var chart = bb.generate({
-        data: {
-            columns: [graphData2019, graphData2018],
-            type: "bubble", // for ESM specify as: bubble()
-            labels: false
-        },
-        bubble: {
-            maxR: 20
-        },
-        axis: {
-            x: {
-                type: "category"
+            data: {
+                columns: [graphData2019, graphData2018],
+                type: "bubble", // for ESM specify as: bubble()
+                labels: false
             },
-            y: {
-                max: 200
-            }
-        },
-        bindto: "#bubbleChart"
+            bubble: {
+                maxR: 20
+            },
+            axis: {
+                x: {
+                    type: "category"
+                },
+                y: {
+                    max: 200
+                }
+            },
+            bindto: "#bubbleChart"
         });
     }
 

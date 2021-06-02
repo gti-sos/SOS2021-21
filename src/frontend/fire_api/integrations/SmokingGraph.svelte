@@ -1,8 +1,8 @@
 <script>
     import bb from 'billboard.js/dist/billboard.pkgd'
-
-    let graphDataMen = ["Hombre"]
-    let graphDataWomen = ["Mujer"]
+    let graphDataYear = ["x"]
+    let graphDataMen = ["Hombres"]
+    let graphDataWomen = ["Mujeres"]
     async function loadData(){
         const API_URL = "https://sos2021-11.herokuapp.com/api/v2/smoking_stats"
         let res = await fetch(API_URL)
@@ -15,34 +15,35 @@
         }
 
         smokingData.forEach((x) => {
+            graphDataYear.push(x.year)
             graphDataMen.push(x.smoking_men)
             graphDataWomen.push(x.smoking_women)
-        })
+        });
+
+        console.log(graphDataMen)
+        console.log(graphDataWomen)
+        console.log(graphDataYear)
 
         var chart = bb.generate({
             data: {
-                xs: {
-                setosa: "setosa_x",
-                versicolor: "versicolor_x"
-                },
-                columns: [graphDataWomen, graphDataMen],
-                type: "scatter", // for ESM specify as: scatter()
-            },
-            axis: {
-                x: {
-                    label: "Sexo",
-                tick: {
-                    fit: false
-                }
-                },
-                y: {
-                    label: "Fumadores"
+                x:'x',
+                columns: [
+                    graphDataYear, graphDataMen, graphDataWomen
+                ],
+                type: "area", // for ESM specify as: area()
+                groups: [
+                    [
+                        "Hombres",
+                        "Mujeres"
+                    ]
+                ],
+                stack: {
+                    normalize: true
                 }
             },
-            bindto: "#scatterPlot"
-        });
-
-
+            clipPath: false,
+            bindto: "#dataStackNormalized"
+            });
     }
     loadData();
 </script>
@@ -53,5 +54,5 @@
 
 <main>
     <h2 style="text-align:center;">Comparación de fumadores varones y hembras</h2>
-    <div id="scatterPlot"></div>
+    <div id="dataStackNormalized"></div>
 </main>
