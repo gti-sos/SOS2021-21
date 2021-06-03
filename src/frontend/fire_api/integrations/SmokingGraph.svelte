@@ -4,8 +4,10 @@
     let graphDataMen = ["Hombres"]
     let graphDataWomen = ["Mujeres"]
     async function loadData(){
-        const API_URL = "https://sos2021-11.herokuapp.com/api/v2/smoking_stats"
-        let res = await fetch(API_URL)
+
+        console.log("Fetching smoking stats with proxy...")
+        const API_PROXY_URL = "proxy/api/v2/smoking_stats";
+        let res = await fetch(API_PROXY_URL)
         let smokingData = await res.json()
         if(res.ok){
             console.log("Se han cargado los datos correctamente")
