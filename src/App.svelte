@@ -15,7 +15,6 @@
 	import TemperatureGraph from './frontend/temperature_api/Graph.svelte';
 	import TemperatureApexcharts from './frontend/temperature_api/GraphApexcharts.svelte';
 
-
 	import EmisionAPI from './frontend/emision_api/EmisionTable.svelte';
 	import EditEmision from './frontend/emision_api/EditEmision.svelte';
 	import EmisionGraph from './frontend/emision_api/Graph.svelte';
@@ -26,6 +25,10 @@
 	import InternationalTourismsGraph from './frontend/fire_api/integrations/InternationalTourismsGraph.svelte';
 	import LifeStatsGraph from './frontend/fire_api/integrations/LifeStatsGraph.svelte';
 	import SmokingGraph from './frontend/fire_api/integrations/SmokingGraph.svelte';
+
+	//Integraciones: Paula Leal Salvago
+	import FoodConsumptionGraph from './frontend/temperature_api/integrations/FoodConsumptionGraph.svelte';
+
 
 	const routes = {
 		"/":Home,
@@ -46,7 +49,9 @@
 		"/integrations/internationaltourisms":InternationalTourismsGraph,
 		"/integrations/lifestats": LifeStatsGraph,
 		"/integrations/smoking":SmokingGraph,
+		"/integrations/foodconsum": FoodConsumptionGraph,
 		"*":NotFound,
+		
     };
 </script>
 

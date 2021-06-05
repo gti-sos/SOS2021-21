@@ -1,5 +1,5 @@
 <script>
-	import {pop} from "svelte-spa-router";
+	  import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     import ApexCharts from 'apexcharts'
 	async function loadGraph(){
@@ -36,48 +36,38 @@
 
         console.log(countryname)
 
-        var options = {
+       var options = {
           series: [{
-            name: "Temperatura mínima",
-            data: valores
-        },{
-            name: "Temperatura máxima",
-            data: valores1
-        },{
-            name: "Temperatura Co2",
-            data: valores2
+          name: 'Temperatura mínima',
+          data: valores
+        }, {
+          name: 'Temperature máxima',
+          data: valores
+        }, {
+          name: 'Temperature Co2',
+          data: valores
         }],
-    
           chart: {
           height: 350,
-          type: 'line',
-          zoom: {
-            enabled: false
-          }
+          type: 'area'
         },
         dataLabels: {
           enabled: false
         },
         stroke: {
-          curve: 'straight'
-        },
-        title: {
-          text: 'Temperaturas',
-          align: 'left'
-        },
-        grid: {
-          row: {
-            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-            opacity: 0.5
-          },
+          curve: 'smooth'
         },
         xaxis: {
-          categories: countryname,
-        }
+          categories: countryname
+        },
+    
+        
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
+      
+      
       
 }
 </script>

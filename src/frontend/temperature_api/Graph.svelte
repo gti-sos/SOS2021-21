@@ -5,6 +5,7 @@
  
     let temperatureData = [];
     let ejeX = [];
+    let ejeY = [];
     let temperature_min = [];
     let temperature_max = [];
     let temperature_co2 = [];
@@ -16,74 +17,71 @@
             console.log(JSON.stringify(temperatureData, null, 2))
             temperatureData.forEach(data => {
                 ejeX.push(data.country + "-" + data.year);
-                temperature_min.push(data["temperature_min"]);
-                temperature_max.push(data["temperature_max"]);
-                temperature_co2.push(data["temperature_co2"]);
+                ejeY.push([data["temperature_min"],data["temperature_max"]]);
             });
         }else{
             console.log("Error loading temperature");
         }
 
         Highcharts.chart('container', {
-            title: {
-                text: 'Gráfico de temperaturas'
+
+            chart: {
+                type: 'columnrange',
+                inverted: true
             },
-            yAxis: {
-                title: {
-                    text: ''
-                }
-            },
+
+    
             xAxis: {
-                title: {
-                    text: 'País-Año'
-                },
                 categories: ejeX
             },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle'
+
+            yAxis: {
+                title: {
+                    text: 'Temperature ( °C )'
+                }
             },
-            series: [{
-                name: 'Temperatura mínima',
-                data: temperature_min
+
+            tooltip: {
+                valueSuffix: '°C'
             },
-            {
-                name: 'Temperatura máxima',
-                data: temperature_max
-            },
-            {
-                name: 'Temperatura del co2',
-                data: temperature_co2
-            }],
-            responsive: {
-                rules: [{
-                    condition: {
-                        maxWidth: 500
-                    },
-                    chartOptions: {
-                        legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom'
-                        }
+
+            plotOptions: {
+                columnrange: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '{y}°C'
                     }
-                }]
-            }
-        });
-  }
+                }
+            },
+
+            legend: {
+                enabled: false
+            },
+
+            series: [{
+                name: 'Temperatura mínima y máxima',
+                data: ejeY
+                
+            }]
+        })
+    };
+
+
 </script>
 
 <svelte:head>
-    <script src="https://code.highcharts.com/highcharts.js" on:load="{loadGraph}"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script
+        src="https://code.highcharts.com/highcharts.js"
+        on:load={loadGraph}></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </svelte:head>
 
 <main>
     <figure class="highcharts-figure">
-        <div id="container"></div>
-    </figure>  
+        <div id="container" />
+    </figure>
 </main>
