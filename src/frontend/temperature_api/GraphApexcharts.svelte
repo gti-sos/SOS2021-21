@@ -5,32 +5,31 @@
 	async function loadGraph(){
 
 	    let MisDatos = [];
-
-        let countryname = [];
+      let countryname = [];
     
 	    const temperatureData = await fetch("/api/v2/temperature-stats");
 	    MisDatos = await temperatureData.json();
 
-		let aux = []
-        let valores = []
-        let valores1 = []
-        let valores2 = []
-        
+      let aux = []
+          let valores = []
+          let valores1 = []
+          let valores2 = []
+          
         MisDatos.forEach((x) => {
             aux = parseInt(x.temperature_min)
-			valores.push(aux);
+            valores.push(aux);
             countryname.push(x.country)
                     
             
         });
         MisDatos.forEach((x) => {
             aux = parseInt(x.temperature_max)
-			valores1.push(aux);
+			      valores1.push(aux);
               
         });
         MisDatos.forEach((x) => {
             aux = parseInt(x.temperature_co2)
-			valores2.push(aux);
+			      valores2.push(aux);
             
         });
 

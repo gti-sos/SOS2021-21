@@ -7,10 +7,10 @@
         let MisDatos = [];
         let countryname = [];
 
-        const temperatureData = await fetch(
+        const foodconsumption = await fetch(
             "https://sos2021-10.herokuapp.com/api/integration/foodconsumption-stats"
         );
-        MisDatos = await temperatureData.json();
+        MisDatos = await foodconsumption.json();
 
         let aux = [];
         let valores = [];
