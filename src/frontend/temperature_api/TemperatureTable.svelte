@@ -206,7 +206,7 @@
     <Table>
         <th>País</th>
         <th>Año </th>
-        <th>Temperatura mínima</th>
+        <th>Temperatura mínima</th> 
         <th>Temperatura máxima</th>
         <th>Temperatura co2</th>
         <th>Acciones</th>

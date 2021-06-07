@@ -25,15 +25,12 @@
 	import InternationalTourismsGraph from './frontend/fire_api/integrations/InternationalTourismsGraph.svelte';
 	import LifeStatsGraph from './frontend/fire_api/integrations/LifeStatsGraph.svelte';
 	import SmokingGraph from './frontend/fire_api/integrations/SmokingGraph.svelte';
-	import RandomCat from './frontend/fire_api/integrations/RandomCat.svelte';
-	import Crypto from './frontend/fire_api/integrations/Crypto.svelte';
 
 	//Integraciones: Paula Leal Salvago
 	import FoodConsumptionGraph from './frontend/temperature_api/integrations/FoodConsumptionGraph.svelte';
 	import CountiescovidGraph from './frontend/temperature_api/integrations/countiescovidGraph.svelte';
+	import IlliteracyGraph from './frontend/temperature_api/integrations/illiteracyGraph.svelte';
 	import GrymsGraph from './frontend/temperature_api/integrations/grymsGraph.svelte';
-	import DuGraph from './frontend/temperature_api/integrations/duGraph.svelte';
-	import JailbaseApiGraph from './frontend/temperature_api/integrations/jailbaseAPIGraph.svelte';
 
 
 	const routes = {
@@ -55,13 +52,10 @@
 		"/integrations/internationaltourisms":InternationalTourismsGraph,
 		"/integrations/lifestats": LifeStatsGraph,
 		"/integrations/smoking":SmokingGraph,	
-		"/integrations/randomcat":RandomCat,
-		"/integrations/crypto": Crypto,
 		"/integrations/foodconsum": FoodConsumptionGraph,
 		"/integrations/countiescovid": CountiescovidGraph,
+		"/integrations/illi": IlliteracyGraph,
 		"/integrations/gryms": GrymsGraph,
-		"/integrations/du": DuGraph,
-		"/integrations/jailapi": JailbaseApiGraph,
 		"*":NotFound,
 		
     };
