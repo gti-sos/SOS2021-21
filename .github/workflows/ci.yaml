@@ -15,3 +15,4 @@ jobs:
       - run: npx newman run tests/temperature/test.json -e tests/temperature/prod_env.json
       - run: npx newman run tests/emision/test.json -e tests/emision/prod_env.json
       - run: node tests/fire/e2e/e2e.js
+      - run: node tests/temperature/e2e/e2e.js
