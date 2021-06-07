@@ -37,11 +37,6 @@
           XAxis.push(e.country+"("+parseInt(e.year)+")");
         })
   
-  
-  
-
-  
-  
         fires.forEach(e=>{
           fireGraph.push(parseInt(e.fire_nfc));
         });

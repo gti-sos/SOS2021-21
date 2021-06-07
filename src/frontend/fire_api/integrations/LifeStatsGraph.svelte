@@ -1,16 +1,24 @@
 <script>
     import bb from 'billboard.js/dist/billboard.pkgd'
 
-    let graphData2018 = ["Quality life index"]
-    let graphData2019 = ["Safety index"]
+    let graphData2018 = ["Indice de calidad de vida"]
+    let graphData2019 = ["Emisiones emitidas"]
 
     async function loadData(){
+        
         const API_URL = "https://sos2021-01-life-stats.herokuapp.com/api/v2/life-stats/"
         let res = await fetch(API_URL)
         let lifeStatsData = await res.json()
-        if(res.ok){
+
+        const API_URL_2 = "/api/v2/fire-stats"
+        let res2 = await fetch(API_URL_2)
+        let fireData = await res2.json()
+
+
+        if(res.ok && res2.ok){
             console.log("Se han cargado los datos correctamente")
             console.log(lifeStatsData)
+            console.log(fireData)
         }else{
             console.log("No se han podido cargar los datos")
         }
@@ -19,8 +27,11 @@
             if(x.date==2018){
                 graphData2018.push(x.quality_life_index)
             }
-            if(x.date==2019){
-                graphData2019.push(x.quality_life_index)
+        })
+
+        fireData.forEach((x)=>{
+            if(x.year >= 2019){
+                graphData2019.push(x.fire_aee)
             }
         })
 
@@ -30,7 +41,7 @@
         
         var chart = bb.generate({
             data: {
-                columns: [graphData2019, graphData2018],
+                columns: [graphData2019, graphData2018.slice(0, graphData2019.length)],
                 type: "bubble", // for ESM specify as: bubble()
                 labels: false
             },
@@ -58,6 +69,7 @@ loadData();
 </svelte:head>
 
 <main>
-    <h2 style="text-align: center;">Gráfica de índice de calidad de vida</h2>
+    <h2 style="text-align: center;">Gráfica de índice de calidad de vida en 2018 y 
+        número de emisiones emitidas a partir del 2019</h2>
     <div id="bubbleChart"></div>
 </main>

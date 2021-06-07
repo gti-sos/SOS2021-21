@@ -7,18 +7,30 @@
         const API_URL = "https://sos2021-03.herokuapp.com/api/integrations/air-pollution/"
         let res = await fetch(API_URL)
         let airPollutionData = await res.json()
-        if(res.ok){
+
+        const API_URL_2 = "/api/v2/fire-stats"
+        let res2 = await fetch(API_URL_2)
+        let fireData = await res2.json()
+
+        if(res.ok && res2.ok){
             console.log("Se han cargado los datos correctamente")
             console.log(airPollutionData)
+            console.log(fireData)
         }else{
             console.log("No se han podido cargar los datos")
         }
 
         airPollutionData.forEach(x => {
-            if(x.year == 1990){
-                graphData.push([x.country, parseInt(x.deaths_air_pollution)])
+            if(x.year >= 2017){
+                graphData.push([x.country+" - muertes", parseInt(x.deaths_air_pollution)])
             }
         });
+
+        fireData.forEach((x) => {
+            if(x.year >= 2017){
+                graphData.push([x.country+ " - emisiones", parseInt(x.fire_aee)])
+            }
+        })
 
         console.log(graphData)
 
@@ -43,6 +55,6 @@
 
 
 <main>
-    <h2 style="text-align:center;">Gráfico de muertes por contaminación en el año 1990</h2>
+    <h2 style="text-align:center;">Gráfico de muertes por contaminación en relación al número de incendios</h2>
     <div id="pieChart"></div>
 </main>
