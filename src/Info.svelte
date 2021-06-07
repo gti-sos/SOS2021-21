@@ -57,6 +57,9 @@
 				<Button color="light"><a href="#/integrations/internationaltourisms">Integracion (Turimos Internacional)</a></Button>
 				<Button color="light"><a href="#/integrations/lifestats">Integracion (Calidad de vida)</a></Button>
 				<Button color="light"><a href="#/integrations/smoking">Integracion (Tabaco)</a></Button>
+				<Button color="light"><a href="#/integrations/randomcat">Integracion Ext(Gatos)</a></Button>
+				<Button color="light"><a href="#/integrations/crypto">Integracion Ext(Crypto)</a></Button>
+
 			</Row>
 		</CardBody>
 	</Card>
