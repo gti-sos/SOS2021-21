@@ -25,6 +25,9 @@
 	import InternationalTourismsGraph from './frontend/fire_api/integrations/InternationalTourismsGraph.svelte';
 	import LifeStatsGraph from './frontend/fire_api/integrations/LifeStatsGraph.svelte';
 	import SmokingGraph from './frontend/fire_api/integrations/SmokingGraph.svelte';
+	import RandomCat from './frontend/fire_api/integrations/RandomCat.svelte';
+	import Crypto from './frontend/fire_api/integrations/Crypto.svelte';
+
 
 	//Integraciones: Paula Leal Salvago
 	import FoodConsumptionGraph from './frontend/temperature_api/integrations/FoodConsumptionGraph.svelte';
@@ -49,6 +52,8 @@
 		"/integrations/internationaltourisms":InternationalTourismsGraph,
 		"/integrations/lifestats": LifeStatsGraph,
 		"/integrations/smoking":SmokingGraph,
+		"/integrations/randomcat": RandomCat,
+		"/integrations/crypto": Crypto,
 		"/integrations/foodconsum": FoodConsumptionGraph,
 		"*":NotFound,
 		
