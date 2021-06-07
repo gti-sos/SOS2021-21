@@ -212,7 +212,7 @@
         <th>Acciones</th>
         <tr>
             <td><input type = "text" bind:value="{findTemperatureCountry}"></td>
-            <td><input type = "number" bind:value="{findTemperatureYear}"></td>
+            <td><input id="findYearInput" type = "number" bind:value="{findTemperatureYear}"></td>
             <td><input type = "number" bind:value="{findTemperatureMin}"></td>
             <td><input type = "number" bind:value="{findTemperatureMax}"></td>
             <td><input type = "number" bind:value="{findTemperatureCo2}"></td>
