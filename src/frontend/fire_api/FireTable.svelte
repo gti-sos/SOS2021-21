@@ -64,7 +64,7 @@
             color = "danger"
             dialogMSG = "Existe más de un campo vacío.";              
         } else {
-            console.log("Nuevo incendio:"+newFire)
+            console.log("Nuevo incendio: "+newFire)
             const res = await fetch("/api/v2/fire-stats", {
                 method: "POST",
                 body: JSON.stringify(newFire),
@@ -211,11 +211,11 @@
         <th>Número de especies vegetales afectadas</th>
         <th>Acciones</th>
         <tr>
-            <td><input type = "text" bind:value="{findFireCountry}"></td>
-            <td><input type = "number" bind:value="{findFireYear}"></td>
-            <td><input type = "number" bind:value="{findFireNfc}"></td>
-            <td><input type = "number" bind:value="{findFireAee}"></td>
-            <td><input type = "number" bind:value="{findFireNvs}"></td>
+            <td><input id= "findCountryInput" type = "text" bind:value="{findFireCountry}"></td>
+            <td><input id= "findYearInput" type = "number" bind:value="{findFireYear}"></td>
+            <td><input id= "findNfcInput" type = "number" bind:value="{findFireNfc}"></td>
+            <td><input id= "findAeeInput" type = "number" bind:value="{findFireAee}"></td>
+            <td><input id= "findNvsInput" type = "number" bind:value="{findFireNvs}"></td>
             <td>
                 <Button color="primary" on:click="{findFire (findFireCountry, findFireYear, findFireNfc, findFireNfc, findFireNvs)}">Buscar</Button>
             </td>
@@ -252,11 +252,11 @@
                 </tr>
             {/each}
             <tr>
-                <td><input bind:value={newFire.country} /></td>
-                <td><input type=number bind:value={newFire.year} /></td>
-                <td><input bind:value={newFire.fire_nfc} /></td>
-                <td><input bind:value={newFire.fire_aee} /></td>
-                <td><input bind:value={newFire.fire_nvs}/></td>
+                <td><input id="newCountryInput" bind:value={newFire.country} /></td>
+                <td><input id="newYearInput" type=number bind:value={newFire.year} /></td>
+                <td><input id="newNfcInput" bind:value={newFire.fire_nfc} /></td>
+                <td><input id="newAeeInput" bind:value={newFire.fire_aee} /></td>
+                <td><input id="newNvsInput" bind:value={newFire.fire_nvs}/></td>
                 <td><Button color="primary" on:click={insertFireData}>Añadir</Button></td>
             </tr>
         </tbody>
