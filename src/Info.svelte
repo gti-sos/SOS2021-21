@@ -95,6 +95,17 @@
 			</CardText>
 
 			<Button color="light"><a href="#/temperature">Frontend</a></Button>
+			<Row cols={{ lg: 3, md: 2, sm: 1 }}>
+				<Button color="light"><a href="#/temperature/apex">Apexcharts JS</a></Button>
+				<Button color="light"><a href="#/temperature/graph">Highcharts</a></Button>
+				<Button color="light"><a href="#/integrations/gryms">Integracion gryms-stats</a></Button>
+				<Button color="light"><a href="#/integrations/foodconsum">Integracion Food Consumption</a></Button>
+				<Button color="light"><a href="#/integrations/countiescovid">Integracion Counties Covid</a></Button>
+				<Button color="light"><a href="#/integrations/du">Integracion du-stats</a></Button>
+				<Button color="light"><a href="#/integrations/Germanyapi">Integracion Ext1</a></Button>
+				<Button color="light"><a href="#/integrations/periodo">Integracion Ext2</a></Button>
+
+			</Row>
 
 		</CardBody>
 	</Card>
