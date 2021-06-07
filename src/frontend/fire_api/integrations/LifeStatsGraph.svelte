@@ -27,13 +27,13 @@
             if(x.date==2018){
                 graphData2018.push(x.quality_life_index)
             }
-        })
+        });
 
         fireData.forEach((x)=>{
             if(x.year >= 2019){
                 graphData2019.push(x.fire_aee)
             }
-        })
+        });
 
         console.log(graphData2019)
         console.log(graphData2018)
