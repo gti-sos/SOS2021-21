@@ -4,12 +4,11 @@
     } from "svelte";
  
     let fireData = [];
+    let countries = []
     let graphData1 = [];
     let graphData2 = [];
     let graphData3 = []
 
-
-    
     async function loadGraph(){  
         const res = await fetch("/api/v2/fire-stats");
         if(res.ok){
@@ -53,12 +52,17 @@
                 gridLineDashStyle: 'Dash'
             },
             xAxis: [{
+                labels: {
+                    enabled: true,
+                    formatter: function() { return countries[this.value][0]},
+                 },
                 visible: false
             }, {
                 visible: false
             }, {
                 visible: false
             }],
+            
             plotOptions: {
                 area: {
                     depth: 100,

@@ -3,6 +3,7 @@
 
     let graphData2018 = ["Indice de calidad de vida"]
     let graphData2019 = ["Emisiones emitidas"]
+    let countries = ["x"]
 
     async function loadData(){
         
@@ -32,6 +33,7 @@
         fireData.forEach((x)=>{
             if(x.year >= 2019){
                 graphData2019.push(x.fire_aee)
+                countries.push(x.country)
             }
         });
 
@@ -41,7 +43,8 @@
         
         var chart = bb.generate({
             data: {
-                columns: [graphData2019, graphData2018.slice(0, graphData2019.length)],
+                "x": "x",
+                columns: [countries, graphData2019, graphData2018.slice(0, countries.length)],
                 type: "bubble", // for ESM specify as: bubble()
                 labels: false
             },

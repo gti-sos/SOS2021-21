@@ -61,6 +61,6 @@
 
 <main>
     <h2 style="text-align:center;">Porcentaje de aterrizajes en los diferentes países a 
-        partir del 2015 en relación al número de especies vegetales afectadas en los incendios</h2>
+        partir del 2015 en relación al número de emisiones emitidas en los incendios</h2>
     <div id="gaugeChart"></div>
 </main>

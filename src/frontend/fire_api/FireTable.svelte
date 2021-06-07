@@ -133,7 +133,7 @@
         if(typeof findFireCountry == 'undefined'){
             findFireCountry = "";
         }
-        if(typeof findFireYear == 'undefined'){
+        if(typeof findFireYear == 'undefined' || findFireYear == "null"){
             findFireYear = "";
         }
         if(typeof findFireNfc == 'undefined'){
@@ -149,7 +149,6 @@
         if (res.ok){
             const json = await res.json();
             fireData = json;
-            
             if(fireData.length>0){
                 color = "success"
                 dialogMSG = "Dato(s) encontrado(s): " + fireData.length;

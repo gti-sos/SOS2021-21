@@ -9,7 +9,6 @@
         CardText,
         CardTitle,
     } from "sveltestrap";
-    import { Col, Container, Row } from "sveltestrap";
 </script>
 
 <main>
@@ -17,7 +16,10 @@
 	<Card class="mb-3">
 		<CardHeader>Youssef Lakouifat</CardHeader>
 		<CardBody>
-			<Button color="light"><a href="">Visitar video</a></Button>
+            <iframe src="https://drive.google.com/file/d/1Ck_m63FFAAMebZN7CorqicZb5pDfF_9w/preview" width="640" height="480"></iframe>
+            <div>
+                <Button color="light"><a href="https://drive.google.com/file/d/1Ck_m63FFAAMebZN7CorqicZb5pDfF_9w/">Visitar video</a></Button>
+            </div>
 		</CardBody>
 	</Card>
 
