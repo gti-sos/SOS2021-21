@@ -30,8 +30,10 @@
 	//Integraciones: Paula Leal Salvago
 	import FoodConsumptionGraph from './frontend/temperature_api/integrations/FoodConsumptionGraph.svelte';
 	import CountiescovidGraph from './frontend/temperature_api/integrations/countiescovidGraph.svelte';
-	import IlliteracyGraph from './frontend/temperature_api/integrations/illiteracyGraph.svelte';
 	import GrymsGraph from './frontend/temperature_api/integrations/grymsGraph.svelte';
+	import DuGraph from './frontend/temperature_api/integrations/duGraph.svelte';
+	import GermanyapiGraph from './frontend/temperature_api/integrations/GermanyapiGraph.svelte';
+	import PeriodoApiGraph from './frontend/temperature_api/integrations/periodoAPIGraph.svelte';
 
 
 	const routes = {
@@ -56,8 +58,10 @@
 		"/integrations/smoking":SmokingGraph,	
 		"/integrations/foodconsum": FoodConsumptionGraph,
 		"/integrations/countiescovid": CountiescovidGraph,
-		"/integrations/illi": IlliteracyGraph,
+		"/integrations/du": DuGraph,
 		"/integrations/gryms": GrymsGraph,
+		"/integrations/Germanyapi": GermanyapiGraph,
+		"/integrations/periodo": PeriodoApiGraph,
 		"*":NotFound,
 		
     };
