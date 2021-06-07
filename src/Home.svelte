@@ -19,6 +19,8 @@
 					funcionalidades que pueden ser usadas a través de la web app.
 				</p>
 				<Button color= "primary" on:click={()=>push("#/info")}>Información</Button>
+				<Button color= "primary" on:click={()=>push("#/about")}>Videos</Button>
+
 			</div>
 		</div>	
 	<style>
