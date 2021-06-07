@@ -2,6 +2,7 @@ var DataStore = require('nedb')
 var temperature_stats = new DataStore({ filename: './src/backend/temperature_api/temperature.db', autoload: true })
 var BASE_API_PATH = "/api/v2";
 var cors = require("cors");
+var request = require("request");
 
 
 
@@ -215,4 +216,12 @@ module.exports.register = (app) => {
         console.log("[INFO] Action not allowed");
         res.sendStatus(405);
     });
+
+    app.use("/proxy", (req, res) =>{
+        console.log("New proxy call");
+        const apiServerHost = "https://sos2021-04.herokuapp.com";
+        let url = apiServerHost + req.url;
+        console.log(url)
+        req.pipe(request(url)).pipe(res);
+      });
 }

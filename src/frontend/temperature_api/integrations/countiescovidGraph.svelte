@@ -2,13 +2,14 @@
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     import ApexCharts from "apexcharts";
+
     async function loadGraph() {
         const temperatureData = await fetch("/api/v2/temperature-stats");
         let MisDatos = await temperatureData.json();
-        const foodconsumption = await fetch(
-            "https://sos2021-10.herokuapp.com/api/integration/foodconsumption-stats"
-        );
-        let SusDatos = await foodconsumption.json();
+        
+        const countiescovid = await fetch(
+            "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily");
+        let SusDatos = await countiescovid.json();
 
         let country = [];
         let data = [];
@@ -17,67 +18,75 @@
         MisDatos.forEach((x) => {
             data.push(parseInt(x.temperature_min));
             country.push(x.country + "-" + x.year);
-           
         });
 
         SusDatos.forEach((x) => {
-            data2.push(parseInt(x.caloryperperson));
+            data2.push(parseInt(x.cases));
         });
 
         var options = {
             series: [
                 {
-                    data: data,
+                    data: data
                 },
                 {
-                    data: data2,
+                    data: data2
                 },
             ],
             chart: {
                 type: "bar",
-                height: 350,
+                height: 440,
+                stacked: true,
             },
+            colors: ["#008FFB", "#FF4560"],
             plotOptions: {
                 bar: {
-                    horizontal: false,
-                    columnWidth: "55%",
-                    endingShape: "rounded",
+                    horizontal: true,
+                    barHeight: "80%",
                 },
             },
             dataLabels: {
                 enabled: false,
             },
             stroke: {
-                show: true,
-                width: 2,
-                colors: ["transparent"],
+                width: 1,
+                colors: ["#fff"],
             },
-            xaxis: {
-                categories: country,
+
+            grid: {
+                xaxis: {
+                    lines: {
+                        show: false,
+                    },
+                },
             },
-            fill: {
-                opacity: 1,
-            },
+
             tooltip: {
-                y: {
+                shared: false,
+                x: {
                     formatter: function (val) {
                         return val;
                     },
                 },
+                y: {
+                    formatter: function (val) {
+                        return Math.abs(val) + "%";
+                    },
+                },
+            },
+            xaxis: {
+                categories: country
             },
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
     }
+
+    loadGraph();
 </script>
 
-<svelte:head>
-    <script
-        src="https://cdn.jsdelivr.net/npm/apexcharts"
-        on:load={loadGraph}></script>
-</svelte:head>
 <main>
     <div id="chart" />
-    <p>Food Consumption (Realizada con apexcharts)</p>
+    <p>Series 1: temperatura mínima en diferentes países (2010-2011) // Series 2: casos covid 19 </p>
 </main>
