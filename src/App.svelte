@@ -44,7 +44,7 @@
 		"/emision-stats/:country/:year": EditEmision,
 		"/emision/graph": EmisionGraph,
 		"/info": Info,
-		"/graph": CommonGraph,
+		"/analytics": CommonGraph,
 		"/integrations/airpollution":AirPollutionGraph,
 		"/integrations/internationaltourisms":InternationalTourismsGraph,
 		"/integrations/lifestats": LifeStatsGraph,

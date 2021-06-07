@@ -54,78 +54,80 @@
       } else {
         console.log("Error!");
       }
-    }
-  
-    async function loadGraph() {
-      getData().then(() => {
-        Highcharts.chart("container", {
-          title: {
-            text: "",
-          },
-          yAxis: {
-            title: {
-              text: "Unidades",
-            },
-          },
-          xAxis: {
-            title: {
-              text: "Pais, Año",
-            },
+
+
+      var chart = Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Gráfica conjunta'
+        },
+        subtitle: {
+            text: 'Gráfica conjunta de los diferentes datos recogidos por las API de los integrantes del grupo'
+        },
+        legend: {
+            align: 'right',
+            verticalAlign: 'middle',
+            layout: 'vertical'
+        },
+
+        xAxis: {
             categories: XAxis,
-          },
-          legend: {
-            layout: "vertical",
-            align: "right",
-            verticalAlign: "middle",
-          },
-          annotations: [
-            {
-              labels: [
-                {
-                  point: "date",
-                  text: "",
-                },
-                {
-                  point: "min",
-                  text: "Min",
-                  backgroundColor: "white",
-                },
-              ],
-            },
-          ],
-          series: [
-            {
-              name: "Total incendios",
-              data: fireGraph,
-            },
-            {
-              name: "Total temepreature minima",
-              data: temperatureGraph,
-            },
-            
-            {
-              name: "Total emisiones",
-              data: emisionGraph,
+            labels: {
+                x: -10
             }
-          ],
-          responsive: {
-            rules: [
-              {
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Amount'
+            }
+        },
+
+        series: [{
+            name: 'Número de incendios',
+            data: fireGraph
+        }, {
+            name: 'Temperaturas',
+            data: temperatureGraph
+        }, {
+            name: 'Emisiones',
+            data: emisionGraph
+        }],
+
+        responsive: {
+            rules: [{
                 condition: {
-                  maxWidth: 500,
+                    maxWidth: 500
                 },
                 chartOptions: {
-                  legend: {
-                    layout: "horizontal",
-                    align: "center",
-                    verticalAlign: "bottom",
-                  },
-                },
-              },
-            ],
-          },
-        });
-      });
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'horizontal'
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -5
+                        },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
+        });          
     }
   </script>
   
@@ -134,12 +136,12 @@
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js" on:load={getData}></script>
   </svelte:head>
   
   <main>
     <div>
-      <h1 class="titulo2">Gráfica conjunta</h1>
+      <div id="container"></div>
     </div>
 
   </main>
