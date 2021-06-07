@@ -24,9 +24,13 @@
 	</Card>
 
     <Card class="mb-3">
-		<CardHeader>Paula Leal/CardHeader</CardHeader>
+		<CardHeader>Paula Leal</CardHeader>
 		<CardBody>
-			<Button color="light"><a href="">Visitar video</a></Button>
+            <iframe src="https://drive.google.com/file/d/1GLcxdWELrwtfVnFqN1EYMjT9cF3BUTsK/preview" width="640" height="480"></iframe>
+            <div>
+                <Button color="light"><a href="https://drive.google.com/file/d/1GLcxdWELrwtfVnFqN1EYMjT9cF3BUTsK/view?usp=sharing">Visitar video</a></Button>
+
+            </div>
 		</CardBody>
 	</Card>
 </main>

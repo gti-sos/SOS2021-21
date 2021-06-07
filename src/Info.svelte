@@ -94,8 +94,8 @@
 				</li>
 			</CardText>
 
-			<Button color="light"><a href="#/temperature">Frontend</a></Button>
 			<Row cols={{ lg: 3, md: 2, sm: 1 }}>
+				<Button color="light"><a href="#/temperature">Frontend</a></Button>
 				<Button color="light"><a href="#/temperature/apex">Apexcharts JS</a></Button>
 				<Button color="light"><a href="#/temperature/graph">Highcharts</a></Button>
 				<Button color="light"><a href="#/integrations/gryms">Integracion gryms-stats</a></Button>
