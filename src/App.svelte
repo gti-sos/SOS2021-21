@@ -3,6 +3,7 @@
 	import Home from './Home.svelte';
 	import NotFound from './404.svelte';
     import Info from './Info.svelte';
+	import About from './About.svelte';
 
 	import FireAPI from './frontend/fire_api/FireTable.svelte';
     import EditFire from './frontend/fire_api/EditeFire.svelte';
@@ -50,6 +51,7 @@
 		"/emision-stats/:country/:year": EditEmision,
 		"/emision/graph": EmisionGraph,
 		"/info": Info,
+		"/about": About,
 		"/analytics": CommonGraph,
 		"/integrations/airpollution":AirPollutionGraph,
 		"/integrations/internationaltourisms":InternationalTourismsGraph,
