@@ -61,7 +61,7 @@ const puppeteer = require('puppeteer');
             await page.waitForTimeout(1000);
             console.log("Timeout! Taking screenshot")
             */
-            console.log("Lookin for more information about a fire")
+            console.log("Looking for more information about a fire")
             await page.click("body > main > main > div.table-responsive > table > tbody > tr:nth-child(1) > td:nth-child(1) > a")
             await page.waitForTimeout(1000);
             console.log("Timeout! Taking screenshot")

@@ -188,7 +188,10 @@
                 <NavLink href="#/temperature/graph">Estadísticas</NavLink> 
             </NavItem>
             <NavItem>
-                <NavLink href="#/graph">Estadísticas globales</NavLink> 
+                <NavLink href="#/temperature/apex">Estadísticas apexcharts</NavLink> 
+            </NavItem>
+            <NavItem>
+                <NavLink href="#/analytics">Estadísticas globales</NavLink> 
             </NavItem>
         </Nav>
     </Navbar>
