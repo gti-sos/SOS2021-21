@@ -7,14 +7,14 @@ const puppeteer = require('puppeteer');
     console.log("Browser opened.");
     
     const page = await browser.newPage();
-    await page.goto('http://localhost:3000/');
+    await page.goto('https://sos2021-21.herokuapp.com/');
     console.log("Page opened!");
     await page.waitForTimeout(1000);
     console.log("Timeout! Taking a screenshot")
     await page.screenshot({ path: 'tests/fire/e2e/01.png', fullPage:true});
     
     // ================== Fronted fire ==================
-    await page.goto('http://localhost:3000/#/fire');
+    await page.goto('https://sos2021-21.herokuapp.com/#/fire');
     await page.click("body > main > main > button.btn.btn-danger");
     console.log("Clicked on delete data");
     await page.waitForTimeout(1000);
@@ -43,7 +43,7 @@ const puppeteer = require('puppeteer');
     console.log("Deleting initial data")
     await page.click("body > main > main > button.btn.btn-danger");
     await page.waitForTimeout(100);
-    await page.goto('http://localhost:3000/#/fire');
+    await page.goto('https://sos2021-21.herokuapp.com/#/fire');
     console.log("Adding new fire")
     await page.$eval('#newCountryInput', el => el.value = 'France');
     await page.waitForTimeout(100);
@@ -69,19 +69,19 @@ const puppeteer = require('puppeteer');
 
 
     console.log("Visiting integration 1...")
-    await page.goto('http://localhost:3000/#/integrations/airpollution');
+    await page.goto('https://sos2021-21.herokuapp.com/#/integrations/airpollution');
     await page.waitForTimeout(1000);
     console.log("Timeout! Taking screenthot")
     await page.screenshot({ path: 'tests/fire/e2e/05.png', fullPage:true});
 
     console.log("Visiting integration 2...")
-    await page.goto('http://localhost:3000/#/integrations/internationaltourisms');
+    await page.goto('https://sos2021-21.herokuapp.com/#/integrations/internationaltourisms');
     await page.waitForTimeout(1000);
     console.log("Timeout! Taking screenthot")
     await page.screenshot({ path: 'tests/fire/e2e/06.png', fullPage:true});
 
     console.log("Visiting integration 3...")
-    await page.goto('http://localhost:3000/#/integrations/lifestats');
+    await page.goto('https://sos2021-21.herokuapp.com/#/integrations/lifestats');
     await page.waitForTimeout(1000);
     console.log("Timeout! Taking screenthot")
     await page.screenshot({ path: 'tests/fire/e2e/07.png', fullPage:true});
