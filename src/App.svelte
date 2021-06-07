@@ -28,6 +28,9 @@
 
 	//Integraciones: Paula Leal Salvago
 	import FoodConsumptionGraph from './frontend/temperature_api/integrations/FoodConsumptionGraph.svelte';
+	import CountiescovidGraph from './frontend/temperature_api/integrations/countiescovidGraph.svelte';
+	import IlliteracyGraph from './frontend/temperature_api/integrations/illiteracyGraph.svelte';
+	import GrymsGraph from './frontend/temperature_api/integrations/grymsGraph.svelte';
 
 
 	const routes = {
@@ -48,8 +51,11 @@
 		"/integrations/airpollution":AirPollutionGraph,
 		"/integrations/internationaltourisms":InternationalTourismsGraph,
 		"/integrations/lifestats": LifeStatsGraph,
-		"/integrations/smoking":SmokingGraph,
+		"/integrations/smoking":SmokingGraph,	
 		"/integrations/foodconsum": FoodConsumptionGraph,
+		"/integrations/countiescovid": CountiescovidGraph,
+		"/integrations/illi": IlliteracyGraph,
+		"/integrations/gryms": GrymsGraph,
 		"*":NotFound,
 		
     };
